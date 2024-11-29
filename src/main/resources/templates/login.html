@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="container">
+    <h2>Login</h2>
+
+    <!-- Hiển thị lỗi khi có thông báo -->
+    <p th:if="${#httpServletRequest.getSession().getAttribute('error')}"
+       th:text="${#httpServletRequest.getSession().getAttribute('error')}"
+       style="color: red;">
+    </p>
+
+
+    <form th:action="@{/login}" method="post">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a th:href="@{/register}">Register here</a></p>
+    <a href="/" class="nav-item nav-link active"><i class="fa fa-home"></i>  Shop</a>
+</div>
+</body>
+</html>
