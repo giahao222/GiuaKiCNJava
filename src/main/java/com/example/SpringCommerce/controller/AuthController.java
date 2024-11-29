@@ -21,7 +21,7 @@ public class AuthController {
 
     @GetMapping("/login")
     public String login() {
-        return "login.html"; // Trả về view login.html
+        return "login"; // Trả về view login.html
     }
 
     @GetMapping("/")
@@ -34,7 +34,7 @@ public class AuthController {
     public String showRegistrationForm(Model model) {
         model.addAttribute("user", new User());
 
-        return "register.html"; // Trả về view register.html
+        return "register"; // Trả về view register.html
     }
 
     @PostMapping("/process_register")
